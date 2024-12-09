@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ gig.title }} - Service Hunting Tool
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h1 class="display-4 text-center mb-4">{{ gig.title }}</h1>
+
+            <div class="card shadow-sm">
+                <img src="{{ gig.image }}" alt="{{ gig.title }}" class="card-img-top" style="height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <h4 class="card-title">{{ gig.public_name }}</h4>
+                            <p class="text-muted">Level: {{ gig.level }}</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <h5 class="mb-0">
+                                <span class="badge bg-primary">
+                                    <i class="bi bi-star-fill me-1"></i>{{ gig.rating }}
+                                </span>
+                            </h5>
+                            <small class="text-muted">{{ gig.total_ratings }} ratings</small>
+                        </div>
+                    </div>
+
+                    <h5 class="card-subtitle mb-3">Seller Statistics</h5>
+                    <p class="card-text">{{ gig.seller_statistics }}</p>
+
+                    <h5 class="card-subtitle mb-3 mt-4">Description</h5>
+                    <p class="card-text">{{ gig.description }}</p>
+
+                    <h5 class="card-subtitle mb-3 mt-4">Feedbacks</h5>
+                    {% if gig.feedbacks %}
+                        <div class="list-group">
+                            {% for feedback in gig.feedbacks %}
+                                <div class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Anonymous User</h6>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">{{ feedback }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No feedbacks available</p>
+                    {% endif %}
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

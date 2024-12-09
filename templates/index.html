@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home - Service Hunting Tool
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header Section -->
+    <header class="text-center mb-5">
+        <h1 class="display-4 text-primary fw-bold mb-3">Welcome to Service Hunting Tool</h1>
+        <p class="lead text-muted">Discover, Compare, and Choose the Best Services for Your Needs</p>
+    </header>
+
+    <!-- Start Hunting Section -->
+    <section class="mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body">
+                        <h2 class="h4 card-title text-center mb-4 text-secondary">Start Your Service Hunt</h2>
+                        <a href="{{ url_for('search') }}" class="btn btn-primary btn-lg d-block mx-auto w-50">
+                            <i class="bi bi-rocket me-2"></i>Start Hunting Services
+                        </a>
+                        <p class="text-center text-muted small mt-3">Popular searches: Web Design, Content Writing, SEO Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="mb-5">
+        <h2 class="h3 text-center mb-4 text-secondary">Why Choose Service Hunting Tool?</h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-search text-primary display-4 mb-3"></i>
+                        <h3 class="h5 card-title fw-bold">Comprehensive Search</h3>
+                        <p class="card-text">Access a wide range of services from various providers in one place.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-bar-chart text-primary display-4 mb-3"></i>
+                        <h3 class="h5 card-title fw-bold">Detailed Comparisons</h3>
+                        <p class="card-text">Compare services based on price, seller rank, and user ratings.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <i class="bi bi-shield-check text-primary display-4 mb-3"></i>
+                        <h3 class="h5 card-title fw-bold">Trusted Providers</h3>
+                        <p class="card-text">Find services from verified and highly-rated service providers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-md-6">
+                <h2 class="h3 mb-3 text-secondary">About Service Hunting Tool</h2>
+                <p class="text-muted">
+                    Service Hunting Tool is designed to streamline the process of finding and evaluating various
+                    services available online. Whether you're searching for a specific type of service or exploring
+                    options, our tool provides an intuitive and efficient way to browse and compare service offerings.
+                </p>
+                <p class="text-muted">
+                    With our advanced filtering and sorting options, you can easily narrow down your search and find
+                    the perfect service that meets your requirements and budget.
+                </p>
+            </div>
+            <!-- Icon/Visual Content -->
+            <div class="col-md-6 text-center">
+                <i class="bi bi-search-dollar text-primary" style="font-size: 120px;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section>
+        <h2 class="h3 text-center mb-4 text-secondary">Get Started Today</h2>
+        <div class="text-center">
+            <a href="{{ url_for('search') }}" class="btn btn-primary btn-lg">
+                <i class="bi bi-rocket me-2"></i>Start Hunting Services
+            </a>
+        </div>
+    </section>
+</div>
+{% endblock %}
