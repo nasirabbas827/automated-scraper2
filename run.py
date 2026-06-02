@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 # Initialize Flask app
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = "YOUR_OWN_API_KEY"
 
 # Database initialization
 def init_db():
